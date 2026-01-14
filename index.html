@@ -25,8 +25,100 @@
 
 <body>
 
-    <!-- CONTENT GOES HERE -->
-    <h1>Hello, world!</h1>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <h1>Hello from Chris 👋</h1>
+            </div>
+            <div class="col-4">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="col-4">
+                <canvas id="myChart2" height="300"></canvas>
+            </div>
+            <div class="col-4">
+                <canvas id="myChart3" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['English', 'French', 'Other', 'N/A'],
+                datasets: [{
+                    label: 'Primary Language',
+                    data: [44, 2, 51, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+            }
+        });
+    </script>
+
+    <script>
+        const ctx2 = document.getElementById('myChart2');
+
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Born in Canada',
+                    '5 years',
+                    '5-10 years',
+                    '> 10 years',
+                    'International',
+                    'Other',
+                    'N/A'
+                ],
+                datasets: [{
+                    label: 'Immigration Status',
+                    data: [38, 14, 7, 11, 29, 0, 1],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+            }
+        });
+    </script>
+
+    <script>
+        const ctx3 = document.getElementById('myChart3');
+
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: [
+                    '2020',
+                    '2021',
+                    '2022',
+                    '2023',
+                    '2024',
+                ],
+                datasets: [
+                    {
+                        label: 'Revenue (in million dollars)',
+                        data: [420, 383, 414, 450, 444],
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Expense (in million dollars)',
+                        data: [405, 362, 393, 429, 421],
+                        borderWidth: 1
+                    }                    
+                ]
+            },
+            options: {
+            }
+        });
+    </script>
+
 
 </body>
 
